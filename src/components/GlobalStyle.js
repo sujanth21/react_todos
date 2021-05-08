@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
 body {
     font-size: 62.5%;
     font-family: 'Itim', cursive;
+    background: #28262C;
+    text-align: center;
 }
 
 h1 {

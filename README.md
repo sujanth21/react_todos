@@ -10,4 +10,4 @@ This project developed to practise React JS, HTML,CSS skills
 
 Project Demo: https://react-todos-sujanth.herokuapp.com/
 
-![screenshot](https://github.com/sujanth21/react-todos/blob/master/src/img/screenshot.PNG)
+![screenshot](https://github.com/sujanth21/react_todos/blob/master/src/img/screenshot.PNG)

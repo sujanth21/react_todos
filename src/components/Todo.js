@@ -37,10 +37,18 @@ const StyledTodo = styled.div`
 
   i.edit {
     color: #3da35d;
+
+    &:hover {
+      color: #33854d;
+    }
   }
 
   i.delete {
     color: #d62828;
+
+    &:hover {
+      color: #ac1515;
+    }
   }
 
   &:hover {

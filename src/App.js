@@ -1,23 +1,26 @@
+import React, { useState } from "react";
 import GlobalStyle from "./components/GlobalStyle";
 import TodoList from "./components/TodoList";
 
 import TodoInput from "./components/TodoInput";
 
-function App() {
-  const todos = [
-    "Walk the dog",
-    "Clean the room",
-    "Wash cloths",
-    "Learn something new",
-    "Go for drive",
-  ];
+const App = () => {
+  const [task, setTask] = useState("");
+
+  const [todos, setTodos] = useState([]);
+
   return (
     <div className='App'>
       <GlobalStyle />
-      <TodoInput />
+      <TodoInput
+        setTask={setTask}
+        task={task}
+        todos={todos}
+        setTodos={setTodos}
+      />
       <TodoList todos={todos} />
     </div>
   );
-}
+};
 
 export default App;

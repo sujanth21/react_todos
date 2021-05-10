@@ -8,7 +8,7 @@ const TodoList = ({ todos }) => {
     <Container>
       <StyledTodoList>
         {todos.map((todo) => {
-          return <Todo task={todo} />;
+          return <Todo task={todo.task} key={todo.id} />;
         })}
       </StyledTodoList>
     </Container>

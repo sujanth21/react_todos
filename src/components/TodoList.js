@@ -3,12 +3,20 @@ import Todo from "./Todo";
 import styled from "styled-components";
 import { Container } from "../styles";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setTodos }) => {
   return (
     <Container>
       <StyledTodoList>
         {todos.map((todo) => {
-          return <Todo task={todo.task} key={todo.id} />;
+          return (
+            <Todo
+              todos={todos}
+              setTodos={setTodos}
+              task={todo.task}
+              key={todo.id}
+              id={todo.id}
+            />
+          );
         })}
       </StyledTodoList>
     </Container>

@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
-const Todo = ({ task }) => {
+const Todo = ({ task, id, todos, setTodos }) => {
+  const onDeleteHandler = (e) => {
+    const filteredTodos = todos.filter((todo) => {
+      return todo.id !== id;
+    });
+    setTodos([...filteredTodos]);
+  };
+
+  const onCompleteHandler = (e) => {
+    console.log(e.target.parentElement.parentElement.children[0]);
+    e.target.parentElement.parentElement.children[0].classList.add("completed");
+  };
   return (
     <StyledTodo>
       <p>{task}</p>
       <div className='controls'>
-        <i className='far fa-edit edit'></i>
-        <i className='far fa-trash-alt delete'></i>
+        <i className='far fa-check-circle edit' onClick={onCompleteHandler}></i>
+        <i className='far fa-trash-alt delete' onClick={onDeleteHandler}></i>
       </div>
     </StyledTodo>
   );
@@ -27,6 +38,10 @@ const StyledTodo = styled.div`
     padding-right: 2rem;
     cursor: pointer;
     color: #fff;
+  }
+  p.completed {
+    text-decoration-line: line-through;
+    text-decoration-color: #bb3838;
   }
 
   i {
